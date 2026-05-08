@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useInView, useScroll, useTransform, AnimatePresence, type Variants } from "framer-motion";
 import {
   MapPin, Star, Camera, Mountain, Waves, Utensils, Building2,
   Compass, Sun, Moon, Zap, ChevronDown, ArrowRight, Play,
@@ -227,9 +227,9 @@ export default function MatiSpotsPage() {
   const cyberBorder = isCyber ? "border-[#7c3aed] shadow-[0_0_20px_rgba(124,58,237,0.5)]" : "";
   const cyberText = isCyber ? "text-[#e0f7ff] drop-shadow-[0_0_8px_rgba(192,132,252,0.8)]" : "";
 
-  const sectionVariants = {
+  const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } },
   };
 
   return (
